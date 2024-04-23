@@ -14,6 +14,7 @@ function Item({ id, name, image, old_price, new_price }) {
         </Link>
         <img
           src={image}
+          onClick={window.scrollTo(0,0)}
           alt="product_image"
           className=" rounded-2xl block object-cover group-hover:scale-110 transition-all duration-1000 "
         ></img>

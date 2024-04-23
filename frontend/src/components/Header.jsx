@@ -1,9 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { FaOpencart } from "react-icons/fa";
+import { ShopContext } from "../Context/ShopContext";
 
 import logout from "../assets/logout.svg";
 import user from "../assets/user.svg";
@@ -14,6 +15,8 @@ function Header() {
   const toggleMenu = () => {
     setMenuOpened(!menuOpened);
   };
+
+  const { totalCartItems } = useContext(ShopContext);
 
   return (
     <header className="fixed top-0 left-0 m-auto max_padd_container w-full bg-transparent ring-1 ring-slate-900/5 z-10">
@@ -56,7 +59,10 @@ function Header() {
           )}
           <div className="flexBetween gap-x-6 ">
             <NavLink to={"cart"} className={""}>
-              <FaOpencart className=" p-1 h-8 w-8" />
+              <FaOpencart className=" p-1 h-8 w-8 ring-slate-900/30 font-extrabold " />
+              <span className="relative flexCenter w-5 h-5 rounded-full bg-secondary text-white medium-14 -top-8 -right-4">
+                {totalCartItems()}
+              </span>
             </NavLink>
             <NavLink
               to={"/"}
