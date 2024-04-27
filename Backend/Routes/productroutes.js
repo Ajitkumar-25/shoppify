@@ -22,7 +22,8 @@ router.post("/addproduct", async (req, resp) => {
 
   try {
     const productAdded = await product.save();
-    console.log("productAdded");
+    // console.log("productAdded");
+    console.log(productAdded);
     resp.json(productAdded);
   } catch (err) {
     console.log(err);
@@ -32,12 +33,11 @@ router.post("/addproduct", async (req, resp) => {
 //remove product
 
 router.post("/removeproduct", async (req, resp) => {
-  //console.log(req.body
   const productId = req.body.id;
   try {
     const product = await Product.findOneAndDelete({ id: productId });
     resp.json(product);
-    console.log("product removed");
+    // console.log("product removed");
   } catch (err) {
     console.log(err);
   }
@@ -47,8 +47,8 @@ router.post("/removeproduct", async (req, resp) => {
 router.get("/getallproducts", async (req, resp) => {
   try {
     const products = await Product.find({});
-    console.log("products fetched");
     resp.json(products);
+    // console.log("products fetched");
   } catch (err) {
     console.log(err);
   }
