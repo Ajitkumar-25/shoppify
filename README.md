@@ -16,8 +16,16 @@ Shoppify is your one-stop solution for all your online shopping needs. With a sl
 
 ## Key Features
 - **User Authentication:** Secure JWT-based authentication system for hassle-free sign-up, login, and personalized user experiences.
-- **Product Management:** Robust functionalities for browsing, searching, and filtering products, ensuring effortless product discovery.
 - **Cart Management:** Dynamic shopping cart system allowing users to manage their items easily before checkout.
-- **Secure Transactions:** Integration of secure payment gateways for encrypted and safe transactions, building trust and confidence among customers.
 - **Responsive Design:** Mobile-friendly and responsive across all devices, providing a seamless shopping experience on smartphones, tablets, and desktops.
+
+
+## Get Started
+1. Clone the repository: `git clone https://github.com/Ajitkumar-25/shoppify.git`
+2. Install dependencies: `npm install`
+3. Run the development server: `nodemon index`
+4. Run The user website:  `npm run dev`
+5. Run The Admin Dashboard :  `npm run dev`
+
+
 
