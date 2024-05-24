@@ -35,6 +35,7 @@ app.post("/upload", upload.single("product"), (req, resp) => {
 });
 
 app.use("/", require("./Routes/productroutes"));
+app.use("/", require("./Routes/auth"));
 
 app.listen(PORT, (req, resp) => {
   console.log(`Server is running on port ${PORT}`);
