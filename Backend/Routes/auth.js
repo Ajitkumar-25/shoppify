@@ -48,7 +48,7 @@ router.post("/register", async (req, resp) => {
     const token = jwt.sign(data, "secret_ecom");
 
     // Send response
-    resp.json({ success: true, token });
+    resp.json({ success: true, token, user });
   } catch (err) {
     console.log(err);
     resp.status(500).send("Internal Server Error");
@@ -69,7 +69,7 @@ router.post("/login", async (req, resp) => {
       },
     };
     const token = jwt.sign(data, "secret_ecom");
-    return resp.json({ success: true, token });
+    return resp.json({ user: user, success: true, token });
   } else {
     return resp.status(400).json({ error: "Invalid credentials" });
   }
